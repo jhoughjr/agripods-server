@@ -1,0 +1,29 @@
+<%= form_for(@humidity_reading) do |f| %>
+  <% if @humidity_reading.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@humidity_reading.errors.count, "error") %> prohibited this humidity_reading from being saved:</h2>
+
+      <ul>
+      <% @humidity_reading.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Sesnor ID" %><br>
+    <%= f.text_field :sensorID %>
+  </div>
+  <div class="field">
+    <%= f.label "Relative Humidity" %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label "Time Measured" %><br>
+    <%= f.datetime_select :measuredAt %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
