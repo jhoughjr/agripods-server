@@ -1,2 +1,0 @@
-# agripods-server
-agripods-server
