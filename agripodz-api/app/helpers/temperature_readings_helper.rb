@@ -1,2 +1,0 @@
-module TemperatureReadingsHelper
-end
