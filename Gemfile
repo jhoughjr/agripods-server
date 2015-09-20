@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# since the main repo doesnt work with rails 4 it seems.
+gem 'jc-validates_timeliness'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -44,4 +46,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
