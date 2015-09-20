@@ -5,7 +5,7 @@ class TemperaturesController < ApplicationController
     render json: @temperatures
   end
 
-  def new
+  def create
     # render plain: params
     @temperature = Temperature.new
     @temperature.sensorID = params[:sensorID]
@@ -15,8 +15,7 @@ class TemperaturesController < ApplicationController
     if @temperature.save
       render plain: "200"
     else
-      render plain: "temperature cannot be saved with params #{params}"\
-                    "because #{@temperature.errors.messages} "
+      render plain: @temperature.errors.messages.to_json
     end
   end
 end
