@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# since the main repo doesnt work with rails 4 it seems.
-gem 'jc-validates_timeliness'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
