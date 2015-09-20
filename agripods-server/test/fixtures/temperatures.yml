@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sensorID: MyString
+  value: 9.99
+  measuredAt: 2015-09-18 21:55:51
+
+two:
+  sensorID: MyString
+  value: 9.99
+  measuredAt: 2015-09-18 21:55:51
