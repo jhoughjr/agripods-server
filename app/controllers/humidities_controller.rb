@@ -1,0 +1,2 @@
+class HumiditiesController < ApplicationController
+end
