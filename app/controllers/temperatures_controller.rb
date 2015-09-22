@@ -6,7 +6,6 @@ class TemperaturesController < ApplicationController
   end
 
   def create
-    # render plain: params
     @temperature = Temperature.new
     @temperature.sensorID = params[:sensorID]
     @temperature.value = params[:value]
