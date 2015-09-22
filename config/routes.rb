@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   apipie
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
- get 'temperatures' => 'temperatures#index'
- get 'temperatures/create' => 'temperatures#create'
+  get 'temperatures' => 'temperatures#index'
+  get 'temperatures/create' => 'temperatures#create'
+
+  get 'humidities/' => 'humidities#index'
+  get 'humidities/create' => 'humidities#create'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
