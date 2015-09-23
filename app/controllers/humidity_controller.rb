@@ -1,0 +1,2 @@
+class HumidityController < SensorReadingController
+end

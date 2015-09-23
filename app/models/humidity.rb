@@ -1,0 +1,3 @@
+class Humidity < SensorReading
+
+end

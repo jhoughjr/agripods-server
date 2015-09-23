@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  get 'temperatures/create' => 'temperature#create'
+  get 'humidtiues/create' => 'humidity#create'
+
+  get 'humidities/' => 'humidity#index'
+  get 'temperatures/' => 'temperature#index'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
