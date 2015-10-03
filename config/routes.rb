@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'humidities/' => 'humidity#index'
   get 'humidities/create' => 'humidity#create'
 
+  get 'heatindices/' => 'heat_index_controller#index'
+  get 'heatindices/create' => 'heat_index_controller#create'
+
   get 'sensor_errors/' => 'sensor_error#index'
   get 'sensor_errors/create' => 'sensor_eror#create'
 end
