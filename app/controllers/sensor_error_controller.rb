@@ -13,9 +13,9 @@ class SensorErrorController < ApplicationController
     @sensor_error.measuredAt = params["mat"]
 
     if @sensor_error.save
-      render json:@sensor_error
+      render json: @sensor_error
     else
-      render json:[]
+      render json: []
     end
 
   end
