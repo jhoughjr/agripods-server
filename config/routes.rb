@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'smoke_levels/' => 'smoke_level#index'
   get 'smoke_levels/create' => 'smoke_level#create'
 
-  get 'amibent_light_levels' => 'amibent_light_levels#index'
-  get 'amibent_light_levels' => 'amibent_light_levels#create'
-  
+  get 'ambient_light_levels' => 'ambient_light_level#index'
+  get 'ambient_light_levels/create' => 'ambient_light_level#create'
+
 end

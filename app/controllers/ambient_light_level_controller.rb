@@ -1,6 +1,8 @@
 class AmbientLightLevelController < ApplicationController
 
   def index
+    respond_to :html, :json
+
     @ambientLightLevels = AmbientLightLevel.all
     render json: @ambientLightLevels
   end
