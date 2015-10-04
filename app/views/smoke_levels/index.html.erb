@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Smoke Levels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @smoke_levels.each do |smoke_level| %>
+      <tr>
+        <td><%= link_to 'Show', smoke_level %></td>
+        <td><%= link_to 'Edit', edit_smoke_level_path(smoke_level) %></td>
+        <td><%= link_to 'Destroy', smoke_level, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Smoke level', new_smoke_level_path %>
