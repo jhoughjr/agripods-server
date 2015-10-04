@@ -1,8 +1,11 @@
 class TemperatureController < SensorReadingController
 
   def index
-    @temperatures = Temperature.all
-    render json: @temperatures
+    respond_to do |format|
+      @temperatures = Temperature.all
+      format.html
+      format.json { render json: @temperatures}
+    end
   end
 
   def create

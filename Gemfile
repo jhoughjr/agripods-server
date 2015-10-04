@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+#responderes
+gem 'responders'
 #mongo
 gem 'mongoid'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
