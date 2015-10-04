@@ -1,1 +1,1 @@
-json.extract! @temperature, :id, :created_at, :updated_at
+json.extract! @temperature, :id, :sensorID, :value, :measuredAt, :created_at, :updated_at

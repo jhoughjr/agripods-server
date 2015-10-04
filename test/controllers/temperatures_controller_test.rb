@@ -18,7 +18,7 @@ class TemperaturesControllerTest < ActionController::TestCase
 
   test "should create temperature" do
     assert_difference('Temperature.count') do
-      post :create, temperature: {  }
+      post :create, temperature: { measuredAt: @temperature.measuredAt, sensorID: @temperature.sensorID, value: @temperature.value }
     end
 
     assert_redirected_to temperature_path(assigns(:temperature))
@@ -35,7 +35,7 @@ class TemperaturesControllerTest < ActionController::TestCase
   end
 
   test "should update temperature" do
-    patch :update, id: @temperature, temperature: {  }
+    patch :update, id: @temperature, temperature: { measuredAt: @temperature.measuredAt, sensorID: @temperature.sensorID, value: @temperature.value }
     assert_redirected_to temperature_path(assigns(:temperature))
   end
 

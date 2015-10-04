@@ -1,2 +1,0 @@
-class SmokeLevelController < ApplicationController
-end

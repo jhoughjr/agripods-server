@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Sensorid:</strong>
+  <%= @temperature.sensorID %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @temperature.value %>
+</p>
+
+<p>
+  <strong>Measuredat:</strong>
+  <%= @temperature.measuredAt %>
+</p>
+
 <%= link_to 'Edit', edit_temperature_path(@temperature) %> |
 <%= link_to 'Back', temperatures_path %>
