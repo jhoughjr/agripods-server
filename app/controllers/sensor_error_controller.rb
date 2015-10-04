@@ -17,6 +17,5 @@ class SensorErrorController < ApplicationController
     else
       render json: []
     end
-
   end
 end

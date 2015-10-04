@@ -12,4 +12,11 @@ Rails.application.routes.draw do
 
   get 'sensor_errors/' => 'sensor_error#index'
   get 'sensor_errors/create' => 'sensor_error#create'
+
+  get 'smoke_levels/' => 'smoke_level#index'
+  get 'smoke_levels/create' => 'smoke_level#create'
+
+  get 'amibent_light_levels' => 'amibent_light_levels#index'
+  get 'amibent_light_levels' => 'amibent_light_levels#create'
+  
 end

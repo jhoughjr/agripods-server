@@ -1,0 +1,2 @@
+module AmbientLightLevelHelper
+end
