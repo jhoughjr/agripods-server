@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensorid:</strong>
+  <%= @smoke_level.sensorID %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @smoke_level.value %>
+</p>
+
+<p>
+  <strong>Measuredat:</strong>
+  <%= @smoke_level.measuredAt %>
+</p>
+
+<%= link_to 'Edit', edit_smoke_level_path(@smoke_level) %> |
+<%= link_to 'Back', smoke_levels_path %>

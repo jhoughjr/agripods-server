@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ambient Light Levels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor ID</th>
+      <th>Value</th>
+      <th>Measured At</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ambient_light_levels.each do |ambient_light_level| %>
+      <tr>
+        <td><%= ambient_light_level.sensorID %></td>
+        <td><%= ambient_light_level.value %></td>
+        <td><%= ambient_light_level.measuredAt %></td>
+        <td><%= link_to 'Show', ambient_light_level %></td>
+        <td><%= link_to 'Edit', edit_ambient_light_level_path(ambient_light_level) %></td>
+        <td><%= link_to 'Destroy', ambient_light_level, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ambient light level', new_ambient_light_level_path %>

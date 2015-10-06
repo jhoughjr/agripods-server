@@ -1,0 +1,2 @@
+module SmokeLevelsHelper
+end

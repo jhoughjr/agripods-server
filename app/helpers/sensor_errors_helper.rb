@@ -1,0 +1,2 @@
+module SensorErrorsHelper
+end

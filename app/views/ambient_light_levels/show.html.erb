@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensorid:</strong>
+  <%= @ambient_light_level.sensorID %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @ambient_light_level.value %>
+</p>
+
+<p>
+  <strong>Measuredat:</strong>
+  <%= @ambient_light_level.measuredAt %>
+</p>
+
+<%= link_to 'Edit', edit_ambient_light_level_path(@ambient_light_level) %> |
+<%= link_to 'Back', ambient_light_levels_path %>

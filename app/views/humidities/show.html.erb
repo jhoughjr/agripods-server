@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensorid:</strong>
+  <%= @humidity.sensorID %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @humidity.value %>
+</p>
+
+<p>
+  <strong>Measuredat:</strong>
+  <%= @humidity.measuredAt %>
+</p>
+
+<%= link_to 'Edit', edit_humidity_path(@humidity) %> |
+<%= link_to 'Back', humidities_path %>

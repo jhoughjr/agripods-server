@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Heat Indices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor ID</th>
+      <th>Value</th>
+      <th>Measured At</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @heat_indices.each do |heat_index| %>
+      <tr>
+        <td><%= heat_index.sensorID %></td>
+        <td><%= heat_index.value %></td>
+        <td><%= heat_index.measuredAt %></td>
+        <td><%= link_to 'Show', heat_index %></td>
+        <td><%= link_to 'Edit', edit_heat_index_path(heat_index) %></td>
+        <td><%= link_to 'Destroy', heat_index, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Heat index', new_heat_index_path %>

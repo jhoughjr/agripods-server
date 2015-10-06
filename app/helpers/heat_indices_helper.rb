@@ -1,0 +1,2 @@
+module HeatIndicesHelper
+end

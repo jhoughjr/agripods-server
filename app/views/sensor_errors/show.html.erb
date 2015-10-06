@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensorid:</strong>
+  <%= @sensor_error.sensorID %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @sensor_error.value %>
+</p>
+
+<p>
+  <strong>Occurredat:</strong>
+  <%= @sensor_error.occurredAt %>
+</p>
+
+<%= link_to 'Edit', edit_sensor_error_path(@sensor_error) %> |
+<%= link_to 'Back', sensor_errors_path %>

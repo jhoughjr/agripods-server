@@ -1,0 +1,29 @@
+<%= form_for(@ambient_light_level) do |f| %>
+  <% if @ambient_light_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ambient_light_level.errors.count, "error") %> prohibited this ambient_light_level from being saved:</h2>
+
+      <ul>
+      <% @ambient_light_level.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sensorID %><br>
+    <%= f.text_field :sensorID %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :measuredAt %><br>
+    <%= f.datetime_select :measuredAt %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensorid:</strong>
+  <%= @heat_index.sensorID %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @heat_index.value %>
+</p>
+
+<p>
+  <strong>Measuredat:</strong>
+  <%= @heat_index.measuredAt %>
+</p>
+
+<%= link_to 'Edit', edit_heat_index_path(@heat_index) %> |
+<%= link_to 'Back', heat_indices_path %>

@@ -1,10 +1,10 @@
-<%= form_for(@temperature) do |f| %>
-  <% if @temperature.errors.any? %>
+<%= form_for(@smoke_level) do |f| %>
+  <% if @smoke_level.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@temperature.errors.count, "error") %> prohibited this temperature from being saved:</h2>
+      <h2><%= pluralize(@smoke_level.errors.count, "error") %> prohibited this smoke_level from being saved:</h2>
 
       <ul>
-      <% @temperature.errors.full_messages.each do |message| %>
+      <% @smoke_level.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -19,7 +19,10 @@
     <%= f.label :value %><br>
     <%= f.text_field :value %>
   </div>
-
+  <div class="field">
+    <%= f.label :measuredAt %><br>
+    <%= f.datetime_select :measuredAt %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
