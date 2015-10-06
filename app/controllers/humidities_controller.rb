@@ -24,7 +24,7 @@ class HumiditiesController < ApplicationController
   # POST /humidities
   # POST /humidities.json
   def create
-    @humidity = Humidity.new(humidity_params)
+    @humidity = Humidity.new(scrubbedParams)
 
     respond_to do |format|
       if @humidity.save
@@ -41,7 +41,7 @@ class HumiditiesController < ApplicationController
   # PATCH/PUT /humidities/1.json
   def update
     respond_to do |format|
-      if @humidity.update(humidity_params)
+      if @humidity.update(scrubbedParams)
         format.html { redirect_to @humidity, notice: 'Humidity was successfully updated.' }
         format.json { render :show, status: :ok, location: @humidity }
       else
@@ -59,6 +59,21 @@ class HumiditiesController < ApplicationController
       format.html { redirect_to humidities_url, notice: 'Humidity was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def scrubbedParams
+    year = humidity_params["measuredAt(1i)"].to_i
+    month = humidity_params["measuredAt(2i)"].to_i
+    day = humidity_params["measuredAt(3i)"].to_i
+    hour = humidity_params["measuredAt(4i)"].to_i
+    minute = humidity_params["measuredAt(5i)"].to_i
+
+    dateTimeFromParams = DateTime.new(year, month, day)
+    excludedParams = ["measuredAt(1i)","measuredAt(2i)","measuredAt(3i)","measuredAt(4i)","measuredAt(5i)"]
+
+    theParams = humidity_params.except(excludedParams)
+    theParams[:measuredAt] = dateTimeFromParams
+    return theParams
   end
 
   private

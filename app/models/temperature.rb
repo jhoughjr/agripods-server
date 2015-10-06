@@ -4,4 +4,5 @@ class Temperature
 
   field :sensorID, type: String
   field :value, type: Float
+  field :measuredAt, type: DateTime
 end
