@@ -1,3 +1,5 @@
+include TimestampParamsHelper
+
 class HumiditiesController < ApplicationController
   before_action :set_humidity, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +26,7 @@ class HumiditiesController < ApplicationController
   # POST /humidities
   # POST /humidities.json
   def create
-    @humidity = Humidity.new(scrubbedParams)
+    @humidity = Humidity.new(scrubbedParams(humidity_params))
 
     respond_to do |format|
       if @humidity.save
@@ -41,7 +43,7 @@ class HumiditiesController < ApplicationController
   # PATCH/PUT /humidities/1.json
   def update
     respond_to do |format|
-      if @humidity.update(scrubbedParams)
+      if @humidity.update(scrubbedParams(humidity_params))
         format.html { redirect_to @humidity, notice: 'Humidity was successfully updated.' }
         format.json { render :show, status: :ok, location: @humidity }
       else
@@ -61,20 +63,7 @@ class HumiditiesController < ApplicationController
     end
   end
 
-  def scrubbedParams
-    year = humidity_params["measuredAt(1i)"].to_i
-    month = humidity_params["measuredAt(2i)"].to_i
-    day = humidity_params["measuredAt(3i)"].to_i
-    hour = humidity_params["measuredAt(4i)"].to_i
-    minute = humidity_params["measuredAt(5i)"].to_i
 
-    dateTimeFromParams = DateTime.new(year, month, day)
-    excludedParams = ["measuredAt(1i)","measuredAt(2i)","measuredAt(3i)","measuredAt(4i)","measuredAt(5i)"]
-
-    theParams = humidity_params.except(excludedParams)
-    theParams[:measuredAt] = dateTimeFromParams
-    return theParams
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
