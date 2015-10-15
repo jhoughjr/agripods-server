@@ -1,3 +1,5 @@
+include TimestampParamsHelper
+
 class HeatIndicesController < ApplicationController
   before_action :set_heat_index, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +26,7 @@ class HeatIndicesController < ApplicationController
   # POST /heat_indices
   # POST /heat_indices.json
   def create
-    @heat_index = HeatIndex.new(heat_index_params)
+    @heat_index = HeatIndex.new(packTimestampParams(heat_index_params))
 
     respond_to do |format|
       if @heat_index.save
@@ -41,7 +43,7 @@ class HeatIndicesController < ApplicationController
   # PATCH/PUT /heat_indices/1.json
   def update
     respond_to do |format|
-      if @heat_index.update(heat_index_params)
+      if @heat_index.update(packTimestampParams(heat_index_params))
         format.html { redirect_to @heat_index, notice: 'Heat index was successfully updated.' }
         format.json { render :show, status: :ok, location: @heat_index }
       else

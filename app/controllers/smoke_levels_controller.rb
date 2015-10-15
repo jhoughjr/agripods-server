@@ -1,3 +1,5 @@
+include TimestampParamsHelper
+
 class SmokeLevelsController < ApplicationController
   before_action :set_smoke_level, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +26,7 @@ class SmokeLevelsController < ApplicationController
   # POST /smoke_levels
   # POST /smoke_levels.json
   def create
-    @smoke_level = SmokeLevel.new(smoke_level_params)
+    @smoke_level = SmokeLevel.new(packTimestampParams(moke_level_params))
 
     respond_to do |format|
       if @smoke_level.save
@@ -41,7 +43,7 @@ class SmokeLevelsController < ApplicationController
   # PATCH/PUT /smoke_levels/1.json
   def update
     respond_to do |format|
-      if @smoke_level.update(smoke_level_params)
+      if @smoke_level.update(packTimestampParams(moke_level_params))
         format.html { redirect_to @smoke_level, notice: 'Smoke level was successfully updated.' }
         format.json { render :show, status: :ok, location: @smoke_level }
       else

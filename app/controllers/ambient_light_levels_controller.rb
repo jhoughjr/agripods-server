@@ -1,3 +1,5 @@
+include TimestampParamsHelper
+
 class AmbientLightLevelsController < ApplicationController
   before_action :set_ambient_light_level, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +26,7 @@ class AmbientLightLevelsController < ApplicationController
   # POST /ambient_light_levels
   # POST /ambient_light_levels.json
   def create
-    @ambient_light_level = AmbientLightLevel.new(ambient_light_level_params)
+    @ambient_light_level = AmbientLightLevel.new(packTimestampParams(ambient_light_level_params))
 
     respond_to do |format|
       if @ambient_light_level.save
@@ -41,7 +43,7 @@ class AmbientLightLevelsController < ApplicationController
   # PATCH/PUT /ambient_light_levels/1.json
   def update
     respond_to do |format|
-      if @ambient_light_level.update(ambient_light_level_params)
+      if @ambient_light_level.update(packTimestampParams(ambient_light_level_params))
         format.html { redirect_to @ambient_light_level, notice: 'Ambient light level was successfully updated.' }
         format.json { render :show, status: :ok, location: @ambient_light_level }
       else

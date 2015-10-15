@@ -1,3 +1,5 @@
+include TimestampParamsHelper
+
 class TemperaturesController < ApplicationController
   before_action :set_temperature, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +26,7 @@ class TemperaturesController < ApplicationController
   # POST /temperatures
   # POST /temperatures.json
   def create
-    @temperature = Temperature.new(temperature_params)
+    @temperature = Temperature.new(packTimestampParams(temperature_params))
 
     respond_to do |format|
       if @temperature.save
@@ -41,7 +43,7 @@ class TemperaturesController < ApplicationController
   # PATCH/PUT /temperatures/1.json
   def update
     respond_to do |format|
-      if @temperature.update(temperature_params)
+      if @temperature.update(packTimestampParams(temperature_params))
         format.html { redirect_to @temperature, notice: 'Temperature was successfully updated.' }
         format.json { render :show, status: :ok, location: @temperature }
       else

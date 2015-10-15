@@ -1,3 +1,5 @@
+include TimestampParamsHelper
+
 class SensorErrorsController < ApplicationController
   before_action :set_sensor_error, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +26,7 @@ class SensorErrorsController < ApplicationController
   # POST /sensor_errors
   # POST /sensor_errors.json
   def create
-    @sensor_error = SensorError.new(sensor_error_params)
+    @sensor_error = SensorError.new(packTimestampParams(ensor_error_params))
 
     respond_to do |format|
       if @sensor_error.save
@@ -41,7 +43,7 @@ class SensorErrorsController < ApplicationController
   # PATCH/PUT /sensor_errors/1.json
   def update
     respond_to do |format|
-      if @sensor_error.update(sensor_error_params)
+      if @sensor_error.update(packTimestampParams(ensor_error_params))
         format.html { redirect_to @sensor_error, notice: 'Sensor error was successfully updated.' }
         format.json { render :show, status: :ok, location: @sensor_error }
       else
