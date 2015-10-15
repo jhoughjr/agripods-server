@@ -26,7 +26,7 @@ class HumiditiesController < ApplicationController
   # POST /humidities
   # POST /humidities.json
   def create
-    @humidity = Humidity.new(scrubbedParams(humidity_params))
+    @humidity = Humidity.new(packTimestampParams(humidity_params))
 
     respond_to do |format|
       if @humidity.save
@@ -43,7 +43,7 @@ class HumiditiesController < ApplicationController
   # PATCH/PUT /humidities/1.json
   def update
     respond_to do |format|
-      if @humidity.update(scrubbedParams(humidity_params))
+      if @humidity.update(packTimestampParams(humidity_params))
         format.html { redirect_to @humidity, notice: 'Humidity was successfully updated.' }
         format.json { render :show, status: :ok, location: @humidity }
       else
